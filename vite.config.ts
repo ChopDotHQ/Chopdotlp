@@ -59,7 +59,12 @@
       outDir: 'build',
     },
     server: {
-      port: 3000,
+      port: 5174,
       open: true,
+      strictPort: true,
+    },
+    preview: {
+      port: 5174,
+      strictPort: true,
     },
   });

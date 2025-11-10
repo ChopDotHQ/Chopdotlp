@@ -37,11 +37,27 @@ export default function App() {
     favicon.setAttribute('href', 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💸</text></svg>');
   }, []);
 
-  // Check URL for admin route
+  // Check URL for admin route and handle unknown routes
   useEffect(() => {
-    if (window.location.pathname === '/admin' || window.location.hash === '#/admin') {
+    const pathname = window.location.pathname;
+    
+    // Handle admin route
+    if (pathname === '/admin' || window.location.hash === '#/admin') {
       setViewMode('admin');
+      return;
     }
+    
+    // Redirect any unknown routes (like /dashboard) to home
+    // Only allow: /, /admin, or hash routes
+    if (pathname !== '/' && pathname !== '/admin' && !pathname.startsWith('/#')) {
+      // Redirect to home for any other route
+      window.history.replaceState({}, '', '/');
+      setViewMode('full');
+      return;
+    }
+    
+    // Default to full view for home
+    setViewMode('full');
   }, []);
 
   return (
