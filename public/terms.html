@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ChopDot Terms of Service - User agreement for expense splitting and on-chain settlements" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+  <title>Terms of Service — ChopDot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #F9FAFB;
+      background: #0E0E10;
+      padding: 0;
+      margin: 0;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      body {
+        color: #030213;
+        background: #ffffff;
+      }
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      header {
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #F9FAFB;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      h1 {
+        color: #030213;
+      }
+    }
+    
+    .last-updated {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      .last-updated {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    
+    nav.toc {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      nav.toc {
+        background: rgba(0, 0, 0, 0.02);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    nav.toc h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    nav.toc ul {
+      list-style: none;
+    }
+    
+    nav.toc li {
+      margin: 0.5rem 0;
+    }
+    
+    nav.toc a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    nav.toc a:hover {
+      color: #E6007A;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      nav.toc a {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      h2 {
+        border-top-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      p {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    @media (prefers-color-scheme: light) {
+      ul, ol {
+        color: rgba(0, 0, 0, 0.8);
+      }
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    a {
+      color: #E6007A;
+      text-decoration: underline;
+    }
+    
+    a:hover {
+      color: #ff1a8c;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+    
+    .back-link:hover {
+      color: #E6007A;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      .back-link {
+        border-top-color: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+    
+    strong {
+      font-weight: 600;
+    }
+    
+    code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9em;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      code {
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+    
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid #E6007A;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0.25rem;
+    }
+    
+    @media (prefers-color-scheme: light) {
+      .highlight-box {
+        background: rgba(0, 0, 0, 0.02);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Terms of Service</h1>
+      <p class="last-updated">Last updated: January 15, 2025</p>
+    </header>
+
+    <nav class="toc" aria-label="Table of Contents">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+        <li><a href="#description">2. Service Description</a></li>
+        <li><a href="#eligibility">3. Eligibility</a></li>
+        <li><a href="#user-accounts">4. User Accounts and Wallets</a></li>
+        <li><a href="#fees">5. Fees and Payments</a></li>
+        <li><a href="#user-obligations">6. User Obligations</a></li>
+        <li><a href="#acceptable-use">7. Acceptable Use</a></li>
+        <li><a href="#self-custody">8. Self-Custody and Responsibility</a></li>
+        <li><a href="#beta-phase">9. Beta Phase Disclaimer</a></li>
+        <li><a href="#disclaimers">10. Disclaimers</a></li>
+        <li><a href="#limitation-liability">11. Limitation of Liability</a></li>
+        <li><a href="#indemnification">12. Indemnification</a></li>
+        <li><a href="#termination">13. Termination</a></li>
+        <li><a href="#modifications">14. Modifications to Service</a></li>
+        <li><a href="#governing-law">15. Governing Law</a></li>
+        <li><a href="#contact">16. Contact Information</a></li>
+      </ul>
+    </nav>
+
+    <section id="acceptance">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing or using ChopDot ("the Service"), operated by ChopDot ("we," "us," or "our"), 
+        you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, 
+        please do not use our Service.
+      </p>
+      <p>
+        These Terms constitute a legally binding agreement between you and ChopDot. We may update these 
+        Terms from time to time, and your continued use of the Service after such changes constitutes 
+        acceptance of the updated Terms.
+      </p>
+    </section>
+
+    <section id="description">
+      <h2>2. Service Description</h2>
+      <p>
+        ChopDot is a decentralised expense-splitting application built on the Polkadot blockchain. Our 
+        Service enables groups to:
+      </p>
+      <ul>
+        <li>Track shared expenses and calculate who owes what</li>
+        <li>Split expenses among group members</li>
+        <li>Settle balances on-chain using Polkadot (DOT) tokens</li>
+        <li>Manage expense groups and transactions</li>
+      </ul>
+      <p>
+        The Service operates in a <strong>beta phase</strong>, meaning it is still under development 
+        and may contain bugs, errors, or incomplete features.
+      </p>
+    </section>
+
+    <section id="eligibility">
+      <h2>3. Eligibility</h2>
+      <p>To use ChopDot, you must:</p>
+      <ul>
+        <li>Be at least 18 years of age</li>
+        <li>Have the legal capacity to enter into binding agreements</li>
+        <li>Comply with all applicable laws and regulations in your jurisdiction</li>
+        <li>Not be prohibited from using the Service under applicable law</li>
+      </ul>
+      <p>
+        If you are using the Service on behalf of an organisation, you represent that you have the 
+        authority to bind that organisation to these Terms.
+      </p>
+    </section>
+
+    <section id="user-accounts">
+      <h2>4. User Accounts and Wallets</h2>
+      <h3>4.1 Wallet Authentication</h3>
+      <p>
+        ChopDot uses wallet-based authentication. You may connect using:
+      </p>
+      <ul>
+        <li>Polkadot.js extension</li>
+        <li>SubWallet</li>
+        <li>Web3Auth (Google login)</li>
+        <li>Other compatible Polkadot wallets</li>
+      </ul>
+      
+      <h3>4.2 Wallet Security</h3>
+      <p>
+        You are solely responsible for:
+      </p>
+      <ul>
+        <li>Maintaining the security and confidentiality of your wallet credentials</li>
+        <li>All activities that occur under your wallet address</li>
+        <li>Protecting your device from unauthorised access</li>
+        <li>Backing up your wallet seed phrases or private keys</li>
+      </ul>
+      <p>
+        <strong>We do not store, have access to, or can recover your wallet credentials.</strong> 
+        If you lose access to your wallet, we cannot help you recover it.
+      </p>
+    </section>
+
+    <section id="fees">
+      <h2>5. Fees and Payments</h2>
+      <h3>5.1 On-Chain Settlement Fees</h3>
+      <p>
+        When you perform on-chain settlements using ChopDot, you will be charged a micropayment fee 
+        ranging from <strong>0.02 to 0.20 CHF</strong> per settlement transaction. This fee covers:
+      </p>
+      <ul>
+        <li>Blockchain transaction costs (gas fees)</li>
+        <li>Service infrastructure costs</li>
+        <li>Network processing fees</li>
+      </ul>
+      <p>
+        Fees are displayed before you confirm a transaction. You will have the opportunity to review 
+        and approve fees before executing any on-chain settlement.
+      </p>
+      
+      <h3>5.2 Payment Method</h3>
+      <p>
+        Fees are paid using Polkadot (DOT) tokens directly from your connected wallet. No credit cards, 
+        bank transfers, or other payment methods are accepted.
+      </p>
+      
+      <h3>5.3 No Financial Custody</h3>
+      <p>
+        <strong>ChopDot does not hold, custody, or control your funds.</strong> All transactions are 
+        peer-to-peer and executed directly from your wallet. We never have access to your funds.
+      </p>
+    </section>
+
+    <section id="user-obligations">
+      <h2>6. User Obligations</h2>
+      <p>As a user of ChopDot, you agree to:</p>
+      <ul>
+        <li>Provide accurate and truthful information when using the Service</li>
+        <li>Use the Service only for lawful purposes</li>
+        <li>Comply with all applicable laws and regulations</li>
+        <li>Not engage in any fraudulent, deceptive, or harmful activities</li>
+        <li>Respect the rights of other users</li>
+        <li>Maintain the security of your account and wallet</li>
+        <li>Report any security vulnerabilities or bugs to us</li>
+        <li>Not attempt to reverse engineer, hack, or exploit the Service</li>
+      </ul>
+    </section>
+
+    <section id="acceptable-use">
+      <h2>7. Acceptable Use</h2>
+      <p>You agree not to use the Service to:</p>
+      <ul>
+        <li>Violate any applicable laws or regulations</li>
+        <li>Engage in money laundering, fraud, or other illegal activities</li>
+        <li>Infringe upon the intellectual property rights of others</li>
+        <li>Transmit viruses, malware, or other harmful code</li>
+        <li>Interfere with or disrupt the Service or servers</li>
+        <li>Impersonate any person or entity</li>
+        <li>Collect or harvest information about other users</li>
+        <li>Use automated systems to access the Service without permission</li>
+        <li>Engage in any activity that could harm our reputation or the Service</li>
+      </ul>
+      <p>
+        Violation of these terms may result in immediate termination of your access to the Service 
+        and potential legal action.
+      </p>
+    </section>
+
+    <section id="self-custody">
+      <h2>8. Self-Custody and Responsibility</h2>
+      <div class="highlight-box">
+        <p><strong>Important:</strong> ChopDot is a self-custodial service. You maintain full control 
+        and responsibility over your wallet and funds.</p>
+      </div>
+      <p>This means:</p>
+      <ul>
+        <li>You control your private keys and wallet credentials</li>
+        <li>We cannot access, freeze, or recover your funds</li>
+        <li>You are responsible for all transactions initiated from your wallet</li>
+        <li>You must verify transaction details before confirming</li>
+        <li>We are not liable for losses due to user error, wallet compromise, or lost credentials</li>
+      </ul>
+      <p>
+        <strong>Always verify transaction details</strong> before confirming any on-chain transaction. 
+        Once a transaction is confirmed on the blockchain, it cannot be reversed.
+      </p>
+    </section>
+
+    <section id="beta-phase">
+      <h2>9. Beta Phase Disclaimer</h2>
+      <p>
+        ChopDot is currently in <strong>beta phase</strong>. This means:
+      </p>
+      <ul>
+        <li>The Service may contain bugs, errors, or incomplete features</li>
+        <li>Features may change or be removed without notice</li>
+        <li>Data may be lost during updates or migrations</li>
+        <li>The Service may experience downtime or interruptions</li>
+        <li>We may reset or modify the Service during the beta period</li>
+      </ul>
+      <p>
+        By using the Service during the beta phase, you acknowledge these risks and agree to use 
+        the Service at your own risk. We recommend not using ChopDot for critical or high-value 
+        transactions during the beta phase.
+      </p>
+    </section>
+
+    <section id="disclaimers">
+      <h2>10. Disclaimers</h2>
+      <h3>10.1 No Warranty</h3>
+      <p>
+        THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, 
+        EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, 
+        FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+      </p>
+      
+      <h3>10.2 No Financial Advice</h3>
+      <p>
+        <strong>ChopDot does not provide financial, investment, or legal advice.</strong> The Service 
+        is a tool for expense splitting and settlement. You are solely responsible for:
+      </p>
+      <ul>
+        <li>Deciding whether to use the Service</li>
+        <li>Understanding the risks of blockchain transactions</li>
+        <li>Complying with applicable tax and regulatory requirements</li>
+        <li>Seeking professional advice if needed</li>
+      </ul>
+      
+      <h3>10.3 Blockchain Risks</h3>
+      <p>
+        Using blockchain technology involves inherent risks, including:
+      </p>
+      <ul>
+        <li>Irreversible transactions</li>
+        <li>Network congestion and delays</li>
+        <li>Smart contract vulnerabilities</li>
+        <li>Regulatory changes</li>
+        <li>Market volatility</li>
+      </ul>
+      <p>You acknowledge and accept these risks.</p>
+    </section>
+
+    <section id="limitation-liability">
+      <h2>11. Limitation of Liability</h2>
+      <p>
+        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CHOPDOT AND ITS AFFILIATES, OFFICERS, 
+        DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR:
+      </p>
+      <ul>
+        <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+        <li>Loss of profits, revenue, data, or use</li>
+        <li>Losses due to user error, wallet compromise, or lost credentials</li>
+        <li>Losses due to blockchain network issues or smart contract failures</li>
+        <li>Losses due to regulatory changes or legal restrictions</li>
+        <li>Any damages exceeding the amount you paid to us in the 12 months preceding the claim</li>
+      </ul>
+      <p>
+        This limitation applies regardless of the theory of liability (contract, tort, negligence, 
+        or otherwise) and even if we have been advised of the possibility of such damages.
+      </p>
+      <p>
+        Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of 
+        the above limitations may not apply to you.
+      </p>
+    </section>
+
+    <section id="indemnification">
+      <h2>12. Indemnification</h2>
+      <p>
+        You agree to indemnify, defend, and hold harmless ChopDot and its affiliates, officers, 
+        directors, employees, and agents from and against any claims, liabilities, damages, losses, 
+        costs, or expenses (including reasonable attorneys' fees) arising out of or relating to:
+      </p>
+      <ul>
+        <li>Your use of the Service</li>
+        <li>Your violation of these Terms</li>
+        <li>Your violation of any applicable laws or regulations</li>
+        <li>Your infringement of any third-party rights</li>
+        <li>Any transactions you initiate or approve</li>
+      </ul>
+    </section>
+
+    <section id="termination">
+      <h2>13. Termination</h2>
+      <h3>13.1 Termination by You</h3>
+      <p>
+        You may stop using the Service at any time. You may also delete your local data stored in 
+        your browser. However, on-chain transactions cannot be deleted or reversed.
+      </p>
+      
+      <h3>13.2 Termination by Us</h3>
+      <p>
+        We may suspend or terminate your access to the Service at any time, with or without notice, 
+        for any reason, including:
+      </p>
+      <ul>
+        <li>Violation of these Terms</li>
+        <li>Fraudulent or illegal activity</li>
+        <li>Abuse of the Service</li>
+        <li>Legal or regulatory requirements</li>
+        <li>Service discontinuation</li>
+      </ul>
+      
+      <h3>13.3 Effect of Termination</h3>
+      <p>
+        Upon termination, your right to use the Service will immediately cease. However, on-chain 
+        transactions will remain on the blockchain and cannot be removed.
+      </p>
+    </section>
+
+    <section id="modifications">
+      <h2>14. Modifications to Service</h2>
+      <p>
+        We reserve the right to modify, suspend, or discontinue the Service (or any part thereof) 
+        at any time, with or without notice. We may also:
+      </p>
+      <ul>
+        <li>Change features, functionality, or user interface</li>
+        <li>Modify fee structures</li>
+        <li>Update security measures</li>
+        <li>Discontinue support for certain wallets or features</li>
+      </ul>
+      <p>
+        We are not liable to you or any third party for any modification, suspension, or 
+        discontinuation of the Service.
+      </p>
+    </section>
+
+    <section id="governing-law">
+      <h2>15. Governing Law</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of Switzerland, 
+        without regard to its conflict of law provisions. Any disputes arising out of or relating to 
+        these Terms or the Service shall be subject to the exclusive jurisdiction of the courts of 
+        Zurich, Switzerland.
+      </p>
+      <p>
+        If any provision of these Terms is found to be invalid or unenforceable, the remaining 
+        provisions shall remain in full force and effect.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>16. Contact Information</h2>
+      <p>
+        If you have any questions about these Terms of Service, please contact us at:
+      </p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:hello@chopdot.xyz">hello@chopdot.xyz</a><br />
+        <strong>Website:</strong> <a href="https://chopdot.xyz">chopdot.xyz</a>
+      </p>
+      <p>
+        For privacy-related inquiries, please see our 
+        <a href="/privacy.html">Privacy Policy</a>.
+      </p>
+    </section>
+
+    <a href="/" class="back-link">← Back to Home</a>
+  </div>
+</body>
+</html>
+

@@ -28,6 +28,24 @@ export function Footer() {
             Docs
           </a>
           <a 
+            href="/privacy.html" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 dark:text-black/70 hover:text-white dark:hover:text-black transition-colors"
+            style={{ fontWeight: 500 }}
+          >
+            Privacy Policy
+          </a>
+          <a 
+            href="/terms.html" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 dark:text-black/70 hover:text-white dark:hover:text-black transition-colors"
+            style={{ fontWeight: 500 }}
+          >
+            Terms of Service
+          </a>
+          <a 
             href="#" 
             className="text-white/70 dark:text-black/70 hover:text-white dark:hover:text-black transition-colors"
             style={{ fontWeight: 500 }}
