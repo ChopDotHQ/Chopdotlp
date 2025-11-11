@@ -21,7 +21,7 @@ export function FAQ() {
     },
     {
       question: 'What\'s the catch?',
-      answer: 'No ads. No data resale. Small fee on settlement (like 1-2%).'
+      answer: 'No ads. No data resale. Fees are waived during beta—you only pay blockchain gas fees. After beta, small platform fees may apply (0.02–0.20 CHF per settlement).'
     },
     {
       question: 'Is this ready to use?',
