@@ -7,17 +7,17 @@ export function Scenarios() {
     {
       icon: Home,
       title: 'Roommates',
-      description: 'Rent, utilities, groceries—monthly auto-split'
+      description: 'Rent, utilities, groceries- monthly auto-split'
     },
     {
       icon: Plane,
       title: 'Group trip',
-      description: 'Flights, hotels, meals—settled transparently'
+      description: 'Flights, hotels, meals- settled transparently'
     },
     {
       icon: Code2,
       title: 'Hackathon team',
-      description: 'Hotel, food runs, supplies—on-chain settlement'
+      description: 'Hotel, food runs, supplies- on-chain settlement'
     },
     {
       icon: Users,
@@ -27,7 +27,7 @@ export function Scenarios() {
     {
       icon: Calendar,
       title: 'Weekend getaway',
-      description: 'Airbnb, activities, dinners—split instantly'
+      description: 'Airbnb, activities, dinners- split instantly'
     },
     {
       icon: Utensils,
@@ -38,6 +38,7 @@ export function Scenarios() {
 
   return (
     <section 
+      id="scenarios"
       ref={elementRef as React.RefObject<HTMLElement>}
       className={`py-[72px] bg-white dark:bg-black relative scroll-animate ${isVisible ? 'visible' : ''}`}
     >

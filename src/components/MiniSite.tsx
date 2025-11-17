@@ -49,7 +49,7 @@ export function MiniSite() {
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-xl mx-auto">
-              The transparent expense app for friends, teams, and communities — powered by Polkadot.
+              The transparent expense app for friends, teams, and communities -  powered by Polkadot.
             </p>
           </div>
 
@@ -147,7 +147,7 @@ export function MiniSite() {
       <footer className="py-8 sm:py-10 relative border-t border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-6">
           <p className="text-white/60 text-sm sm:text-base">
-            ChopDot makes fairness practical — for friends, studios, and communities.
+            ChopDot makes fairness practical -  for friends, studios, and communities.
           </p>
 
           <div className="flex justify-center gap-4 sm:gap-5">

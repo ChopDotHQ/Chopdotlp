@@ -397,7 +397,7 @@ xl: 1280px
 - Description: `text-lg text-black/70 dark:text-white/70 leading-relaxed`
 
 **Features Content:**
-1. **Create Group** - "Start a group, invite members. No accounts needed—just wallet addresses."
+1. **Create Group** - "Start a group, invite members. No accounts needed- just wallet addresses."
 2. **Add Expenses** - "Log shared costs as they happen. Tag who owes what. Crystal clear breakdown."
 3. **Settle On-Chain** - "When it's time to settle, members pay with crypto. Transparent. Instant. Done."
 

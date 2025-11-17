@@ -1,9 +1,15 @@
-import { Zap, Shield, Users, Plus, Receipt, BarChart3, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Zap, Shield, Users, Plus, Receipt, BarChart3, CheckCircle2, ArrowRight, Database } from 'lucide-react';
 import baliTripScreenshot from 'figma:asset/7886c174fa4d02abef2f4f5291ac0d99dfe17f82.png';
 import polkadotSettlement from 'figma:asset/b077d869eeeb730c7df4c3568ced9d5f0744bc21.png';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 
-export function WhyAndHow() {
+type LandingVariant = 'legacy' | 'next';
+
+interface WhyAndHowProps {
+  variant?: LandingVariant;
+}
+
+export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
   const { elementRef, isVisible } = useScrollAnimation();
   
   const scrollToSection = (id: string) => {
@@ -11,27 +17,64 @@ export function WhyAndHow() {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const benefits = [
-    {
-      icon: Zap,
-      title: "Instant settlement",
-      description: "Close the pot, everyone's paid. No IOUs."
-    },
-    {
-      icon: Shield,
-      title: "Blockchain receipts",
-      description: "Every transaction recorded. No \"wait, who paid?\""
-    },
-    {
-      icon: Users,
-      title: "Actually scales",
-      description: "Works for 2 roommates or 20 festival attendees."
-    }
-  ];
+  const benefits = variant === 'legacy'
+    ? [
+        {
+          icon: Zap,
+          title: 'Instant settlement',
+          description: "Close the pot, everyone's paid. No IOUs."
+        },
+        {
+          icon: Shield,
+          title: 'Blockchain receipts',
+          description: 'Every transaction recorded. No "wait, who paid?"'
+        },
+        {
+          icon: Users,
+          title: 'Actually scales',
+          description: 'Works for 2 roommates or 20 festival attendees.'
+        }
+      ]
+    : [
+        {
+          icon: Zap,
+          title: 'Instant settlement',
+          description: "Close the pot, everyone's paid. No IOUs."
+        },
+        {
+          icon: Shield,
+          title: 'Your receipts, forever',
+          description: 'Stored on Crust Network- decentralized, permanent, yours.'
+        },
+        {
+          icon: Users,
+          title: 'Actually scales',
+          description: 'Works for 2 roommates or 20 festival attendees.'
+        },
+        {
+          icon: Database,
+          title: 'Built on Polkadot',
+          description: 'Low fees, fast settlements, Web3 integrations.'
+        }
+      ];
+
+  const benefitsGridClass = variant === 'next'
+    ? 'grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20'
+    : 'grid md:grid-cols-3 gap-8 mb-20';
+
+  const paragraphTwo =
+    variant === 'next'
+      ? `Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently on Polkadot and the receipts live on Crust Network- decentralized storage that means your data belongs to you, not our servers. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. Even if ChopDot shuts down, your records live on. It's transparency by default, not as an afterthought.`
+      : `Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. It's transparency by default, not as an afterthought. Whether you're splitting a dinner with 3 friends or managing expenses for 20 people at a festival, the system just works.`;
+
+  const paragraphThree =
+    variant === 'next'
+      ? `Parity's 2025 roadmap- Asynchronous Backing, Agile Coretime, Elastic Scaling, PolkaVM, and a more accessible Polkadot App- means faster blocks, flexible blockspace, and Solidity compatibility. The Polkadot App focuses on onboarding and identity; ChopDot sits on top to coordinate group finance the moment those new users need to settle with friends.`
+      : undefined;
 
   return (
     <section 
-      id="how-it-works"
+      id="story"
       ref={elementRef as React.RefObject<HTMLElement>}
       className={`py-[72px] bg-white dark:bg-black relative border-b border-black/5 dark:border-white/5 scroll-animate ${isVisible ? 'visible' : ''}`}
     >
@@ -56,18 +99,22 @@ export function WhyAndHow() {
 
           {/* Prose content */}
           <div className="space-y-6 scroll-fade-in max-w-4xl mx-auto mb-12" style={{ animationDelay: '100ms' }}>
-            <p className="text-lg leading-relaxed text-black/80 dark:text-white/80">
-              Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid instantly—no IOUs, no mental accounting, no chasing people down three weeks later.
-            </p>
-            
-            <p className="text-lg leading-relaxed text-black/80 dark:text-white/80">
-              Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. It's transparency by default, not as an afterthought. Whether you're splitting a dinner with 3 friends or managing expenses for 20 people at a festival, the system just works.
-            </p>
+            {[ 
+              'Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid instantly- no IOUs, no mental accounting, no chasing people down three weeks later.',
+              paragraphTwo,
+              paragraphThree
+            ]
+              .filter((copy): copy is string => Boolean(copy))
+              .map((copy, index) => (
+                <p key={index} className="text-lg leading-relaxed text-black/80 dark:text-white/80">
+                  {copy}
+                </p>
+              ))}
           </div>
         </div>
 
-        {/* Three Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        {/* Benefits */}
+        <div className={benefitsGridClass}>
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
@@ -100,7 +147,7 @@ export function WhyAndHow() {
         </div>
 
         {/* HOW IT WORKS SECTION - Visual Storytelling */}
-        <div className="mb-12 scroll-fade-in" style={{ animationDelay: '400ms' }}>
+        <div className="mb-12 scroll-fade-in" style={{ animationDelay: '400ms' }} id="how-it-works">
           <h2 className="text-3xl sm:text-4xl text-black dark:text-white tracking-tight mb-3 text-center" style={{ fontWeight: 700, lineHeight: 1.1 }}>
             How it works
           </h2>
@@ -158,7 +205,7 @@ export function WhyAndHow() {
                       </h3>
                     </div>
                     <p className="text-black/70 dark:text-white/70 leading-relaxed">
-                      Track who paid for what—accommodation, food, activities. Each expense gets logged with who covered it.
+                      Track who paid for what- accommodation, food, activities. Each expense gets logged with who covered it.
                     </p>
                   </div>
                 </div>
@@ -200,9 +247,9 @@ export function WhyAndHow() {
             </div>
           </div>
 
-          {/* Part 2: Review & Settle */}
-          <div className="scroll-fade-in" style={{ animationDelay: '700ms' }}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Part 2: Review & Settle */}
+        <div className="scroll-fade-in" style={{ animationDelay: '700ms' }}>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
               
               {/* Screenshot: Settlement */}
               <div className="flex justify-center lg:justify-start">
@@ -271,12 +318,40 @@ export function WhyAndHow() {
                       </h3>
                     </div>
                     <p className="text-black/70 dark:text-white/70 leading-relaxed">
-                      Close the pot and settle instantly on Polkadot. Every transaction gets recorded on the blockchain—transparent, permanent, done.
+                      Close the pot and settle instantly on Polkadot. Every transaction gets recorded on the blockchain- transparent, permanent, done.
                     </p>
-                  </div>
-                </div>
+          </div>
+        </div>
+
+        {variant === 'next' && (
+          <div className="mt-16 scroll-fade-in" style={{ animationDelay: '500ms' }}>
+            <h3 className="text-2xl font-bold text-center mb-6 text-black dark:text-white">
+              Powered by the Polkadot Ecosystem
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="text-center p-6 rounded-lg bg-black/5 dark:bg-white/5">
+                <h4 className="font-semibold mb-2 text-black dark:text-white">Polkadot</h4>
+                <p className="text-sm text-black/60 dark:text-white/60">
+                  Low-fee settlements in DOT and USDC
+                </p>
+              </div>
+              <div className="text-center p-6 rounded-lg bg-black/5 dark:bg-white/5">
+                <h4 className="font-semibold mb-2 text-black dark:text-white">Crust Network</h4>
+                <p className="text-sm text-black/60 dark:text-white/60">
+                  Decentralized receipt storage- your data, forever
+                </p>
+              </div>
+              <div className="text-center p-6 rounded-lg bg-black/5 dark:bg-white/5">
+                <h4 className="font-semibold mb-2 text-black dark:text-white">Acala</h4>
+                <p className="text-sm text-black/60 dark:text-white/60">
+                  DeFi yields on group savings (coming soon)
+                </p>
               </div>
             </div>
+          </div>
+        )}
+      </div>
+    </div>
           </div>
         </div>
       </div>

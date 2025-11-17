@@ -3,12 +3,21 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { Lock, Shield, CheckCircle2, Users } from 'lucide-react';
+import { Lock, CheckCircle2, Users, Twitter, MessageCircle, BellRing } from 'lucide-react';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 
-export function BetaSignup() {
+type LandingVariant = 'legacy' | 'next';
+
+interface BetaSignupProps {
+  variant?: LandingVariant;
+}
+
+const twitterUrl = 'https://x.com/chopdotapp';
+
+export function BetaSignup({ variant = 'next' }: BetaSignupProps) {
   const { elementRef, isVisible } = useScrollAnimation();
+  const isLegacy = variant === 'legacy';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,8 +28,10 @@ export function BetaSignup() {
   const [error, setError] = useState('');
   const [signupCount, setSignupCount] = useState<number | null>(null);
 
-  // Fetch signup count
+  // Fetch signup count only for the legacy form
   useEffect(() => {
+    if (!isLegacy) return;
+
     const fetchCount = async () => {
       try {
         const url = `https://${projectId}.supabase.co/functions/v1/make-server-18b870a9/beta-signups`;
@@ -38,17 +49,15 @@ export function BetaSignup() {
           setSignupCount(null);
         }
       } catch (err) {
-        // Counter will stay hidden if server is not deployed yet
         console.log('Counter: Server not available yet (this is normal on first load)');
         setSignupCount(null);
       }
     };
 
     fetchCount();
-    // Refresh count every 30 seconds
     const interval = setInterval(fetchCount, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isLegacy]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,12 +93,10 @@ export function BetaSignup() {
       console.log('Beta signup successful!');
       setIsSubmitted(true);
       
-      // Update counter immediately
       if (signupCount !== null) {
         setSignupCount(signupCount + 1);
       }
       
-      // Reset form after success
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({
@@ -105,6 +112,133 @@ export function BetaSignup() {
       setIsSubmitting(false);
     }
   };
+
+  const openTwitter = () => {
+    window.open(twitterUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  if (!isLegacy) {
+    const steps = [
+      {
+        icon: Twitter,
+        title: 'Follow @chopdotapp',
+        description: 'Beta drops go live on X first. Following is how you raise your hand.'
+      },
+      {
+        icon: MessageCircle,
+        title: 'DM “BETA”',
+        description: 'Send us a DM once you follow so we can DM you cohort invites.'
+      },
+      {
+        icon: BellRing,
+        title: 'Watch for invites',
+        description: 'We announce small groups via DM + public threads as features ship.'
+      }
+    ];
+
+    return (
+      <section 
+        id="beta"
+        ref={elementRef as React.RefObject<HTMLElement>}
+        className={`relative py-[72px] overflow-hidden bg-white dark:bg-black scroll-animate ${isVisible ? 'visible' : ''}`}
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-[120px]"
+            style={{ background: 'radial-gradient(circle, #E6007A 0%, transparent 70%)' }}
+          />
+        </div>
+
+        <div className="max-w-3xl mx-auto px-6 sm:px-8 relative">
+          <div className="text-center mb-12 scroll-fade-in">
+            <h2 
+              className="text-4xl sm:text-5xl lg:text-6xl mb-4 text-black dark:text-white tracking-tight"
+              style={{ fontWeight: 700, lineHeight: 1.1 }}
+            >
+              Join the beta
+            </h2>
+            <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-2xl mx-auto">
+              We’re moving early access coordination to X. Follow us there and DM “BETA” to get the next drop.
+            </p>
+          </div>
+
+          <div className="relative rounded-2xl p-10 sm:p-12 bg-white dark:bg-black border border-black/10 dark:border-white/10 scroll-fade-in">
+            <div 
+              className="absolute inset-0 pointer-events-none opacity-[0.05] mix-blend-overlay rounded-2xl"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              }}
+            />
+
+            <div className="relative space-y-10">
+              <div className="grid md:grid-cols-3 gap-6">
+                {steps.map((step, index) => {
+                  const Icon = step.icon;
+                  return (
+                    <div key={index} className="p-6 rounded-xl bg-black/5 dark:bg-white/5 text-center">
+                      <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-[#E6007A]/10 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-[#E6007A]" />
+                      </div>
+                      <h3 className="text-lg text-black dark:text-white mb-2" style={{ fontWeight: 600 }}>
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-black/60 dark:text-white/60 leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  onClick={openTwitter}
+                  className="bg-[#E6007A] text-white px-10 py-7 rounded-xl shadow-lg hover:shadow-xl transition-all border-0"
+                  style={{ fontSize: '18px', fontWeight: 600 }}
+                >
+                  Follow @chopdotapp
+                </Button>
+              </div>
+
+              <p className="text-center text-sm text-black/60 dark:text-white/60">
+                After you follow, DM us “BETA” so we can confirm your spot and send cohort dates.
+              </p>
+              <p className="text-center text-xs text-black/50 dark:text-white/50">
+                We’ll share progress threads, feature drops, and open beta cohorts exclusively via X.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes scroll-fade-in {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .scroll-fade-in {
+            animation: scroll-fade-in 0.2s ease-out forwards;
+            opacity: 0;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .scroll-fade-in {
+              animation: none;
+              opacity: 1;
+              transform: none;
+            }
+          }
+        `}</style>
+      </section>
+    );
+  }
 
   return (
     <section 
@@ -132,7 +266,7 @@ export function BetaSignup() {
             Join the beta
           </h2>
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-xl mx-auto">
-            Be among the first to split expenses—fairly, instantly, transparently.
+            Be among the first to split expenses- fairly, instantly, transparently.
           </p>
           
           {/* Signup Counter */}
@@ -317,20 +451,13 @@ export function BetaSignup() {
               Stay updated on launch announcements, features, and Web3 community news
             </p>
             <Button
-              onClick={() => window.open('https://x.com/chopdot', '_blank')}
+              onClick={openTwitter}
               variant="outline"
               className="gap-2 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
               style={{ fontWeight: 600 }}
             >
-              <svg 
-                className="w-5 h-5" 
-                fill="currentColor" 
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-              @chopdot
+              <Twitter className="w-5 h-5" />
+              @chopdotapp
             </Button>
           </div>
         </div>

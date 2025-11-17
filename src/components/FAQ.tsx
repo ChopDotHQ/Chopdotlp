@@ -13,7 +13,7 @@ export function FAQ() {
     },
     {
       question: 'Can I export everything?',
-      answer: 'Yes—CSV/PDF with receipts and balances.'
+      answer: 'Yes. CSV/PDF exports include receipts and balances.'
     },
     {
       question: 'What if someone disagrees?',
@@ -21,7 +21,11 @@ export function FAQ() {
     },
     {
       question: 'What\'s the catch?',
-      answer: 'No ads. No data resale. Fees are waived during beta—you only pay blockchain gas fees. After beta, small platform fees may apply (0.02–0.20 CHF per settlement).'
+      answer: 'No ads. No data resale. Fees are waived during beta, you only pay blockchain gas fees. After beta, small platform fees may apply (0.02–0.20 CHF per settlement).'
+    },
+    {
+      question: 'How much does it cost?',
+      answer: 'The per-pot fee you see in the demo is symbolic while we finalize pricing. Settling in DOT keeps costs low because Polkadot fees are measured in fractions of a cent, and even bank payouts will stay cheaper than most fintech options.'
     },
     {
       question: 'Is this ready to use?',
@@ -31,6 +35,7 @@ export function FAQ() {
 
   return (
     <section 
+      id="faq"
       ref={elementRef as React.RefObject<HTMLElement>}
       className={`py-[72px] bg-white dark:bg-black relative scroll-animate ${isVisible ? 'visible' : ''}`}
     >

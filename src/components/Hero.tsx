@@ -2,8 +2,19 @@ import { Button } from './ui/button';
 import dashboardScreenshot from 'figma:asset/180bfc8e80372d9c9d7a7766a8c533f2e3674ee8.png';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 
-export function Hero() {
+type HeroVariant = 'legacy' | 'next';
+
+interface HeroProps {
+  variant?: HeroVariant;
+}
+
+export function Hero({ variant = 'next' }: HeroProps) {
   const { elementRef, isVisible } = useScrollAnimation();
+  const subheading =
+    variant === 'legacy'
+      ? 'Split expenses. On-chain.'
+      : 'Group expenses settled instantly on the blockchain. No IOUs, no awkward reminders.';
+  const showPolkadotBadge = variant === 'next';
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -63,8 +74,19 @@ export function Hero() {
               className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up"
               style={{ animationDelay: '100ms' }}
             >
-              Split expenses. On-chain.
+              {subheading}
             </p>
+
+            {showPolkadotBadge && (
+              <div 
+                className="flex items-center gap-2 justify-center lg:justify-start animate-fade-in-up"
+                style={{ animationDelay: '150ms' }}
+              >
+                <div className="px-3 py-1 rounded-full bg-[#E6007A]/10 border border-[#E6007A]/20">
+                  <span className="text-xs font-medium text-[#E6007A]">Built on Polkadot</span>
+                </div>
+              </div>
+            )}
 
             <div 
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-fade-in-up"
