@@ -398,13 +398,13 @@ Roadmap & Vision
 ```
 
 ### Copy Blocks
-- **Intro:** Reiterates that ChopDot rides on Parity upgrades / Polkadot App / Asset Hub and includes a disclaimer that phases may change as education + scaling needs evolve, but self-sovereign coordination remains the focus.
-- **Timeline Cards (4 phases):**
-  1. *Phase 1 – Today:* Group pots, fast receipts, education kits for squads onboarding now.
-  2. *Phase 2 – Next up:* ChopCards + guided onboarding, where shared cards auto-log spending into pots and can plug into privacy-friendly Polkadot identity rails if users opt in.
-  3. *Phase 3:* Stable savings (USDC/USDT via Asset Hub) plus merchant rails and Polkadot Visa pilots.
-  4. *Phase 4:* Programmable communities- micro-subscriptions, creator tipping, APIs- described as flexible as Elastic Scaling and community feedback evolve.
-- **Each card** still uses a label, paragraph, and three bullet chips.
+- **Intro:** Frames the section as “what’s live today vs what lands next,” and reminds visitors that timing flexes with Parity’s roadmap, Elastic Scaling, and community feedback.
+- **Roadmap Cards (4 phases):** Each card carries a status pill (`Live today`, `Next up`, `Later roadmap`), a concise description, and uppercase bullet chips instead of paragraphs.
+  1. *Phase 1 – Today* (Live today): DOT settlement on Asset Hub, optional bank payouts, Supabase auth, Crust/IPFS exports, responsive UI.
+  2. *Phase 2 – Next up* (Next up): ChopCards auto-log spend, optional Polkadot App identity hooks, and self-serve onboarding kits.
+  3. *Phase 3* (Later roadmap): Asset Hub stablecoin pots, Acala yield routing, QR/POS pilots + Polkadot Visa experimentation.
+  4. *Phase 4* (Later roadmap): Programmable communities with recurring flows, creator/DAO APIs, Elastic Scaling readiness.
+- **Each card** pairs the phase label with the status badge and a row of pill-shaped bullet chips for fast scanning.
 
 ### Mission & Vision Tiles
 - Three mini-cards below the timeline:
@@ -485,13 +485,13 @@ The CTA button and the MiniSite both open the X profile so there’s a single fl
 - Docs (`https://github.com/ChopDotHQ/ChopDot#readme`)
 - Privacy Policy (`/privacy.html`)
 - Terms of Service (`/terms.html`)
-- GitHub (placeholder: `#` - should link to repo)
-- X / Twitter (placeholder: `#` - should link to @chopdotapp)
+- GitHub (`https://github.com/ChopDotHQ/ChopDot`)
+- X / Twitter (`https://x.com/chopdotapp`)
 
 ### Social Icons
 - X / Twitter
 - GitHub
-- Mirror (FileText icon)
+- Mirror (FileText icon linking to `https://mirror.xyz/` until branded posts go live)
 
 **Style:**
 - Circular icons with hover effects

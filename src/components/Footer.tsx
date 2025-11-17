@@ -3,6 +3,7 @@ import { useScrollAnimation } from '../utils/useScrollAnimation';
 
 const githubUrl = 'https://github.com/ChopDotHQ/ChopDot';
 const twitterUrl = 'https://x.com/chopdotapp';
+const mirrorUrl = 'https://mirror.xyz/';
 
 export function Footer() {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -91,7 +92,7 @@ export function Footer() {
             <Github className="w-4 h-4" />
           </a>
           <a
-            href={githubUrl}
+            href={mirrorUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-white/10 dark:bg-black/10 hover:bg-[#E6007A] dark:hover:bg-[#E6007A] hover:text-white flex items-center justify-center transition-all duration-250 ease-out"

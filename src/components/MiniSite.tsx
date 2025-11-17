@@ -5,6 +5,34 @@ import logoImage from 'figma:asset/2f278e7f9aca00057cd69bc7a598aa9bac969b83.png'
 const twitterUrl = 'https://x.com/chopdotapp';
 const githubUrl = 'https://github.com/ChopDotHQ/ChopDot';
 
+const steps = [
+  {
+    title: 'Follow on X',
+    description: 'Beta drops and product updates post on @chopdotapp first.'
+  },
+  {
+    title: 'DM “BETA”',
+    description: 'Send us a DM with “BETA” so we can slot you into the next cohort.'
+  },
+  {
+    title: 'Watch for invites',
+    description: 'We announce cohorts via DM + public threads. No spam, just progress.'
+  }
+];
+
+const socialLinks = [
+  {
+    label: 'Twitter',
+    href: twitterUrl,
+    Icon: Twitter
+  },
+  {
+    label: 'GitHub',
+    href: githubUrl,
+    Icon: Github
+  }
+];
+
 export function MiniSite() {
   const openTwitter = () => {
     window.open(twitterUrl, '_blank', 'noopener,noreferrer');
@@ -53,21 +81,8 @@ export function MiniSite() {
             </Button>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 text-left">
-            {[
-              {
-                title: 'Follow on X',
-                description: 'Beta drops and product updates post on @chopdotapp first.',
-              },
-              {
-                title: 'DM “BETA”',
-                description: 'Send us a DM with “BETA” so we can slot you into the next cohort.',
-              },
-              {
-                title: 'Watch for invites',
-                description: 'We announce cohorts via DM + public threads. No spam, just progress.',
-              },
-            ].map((step, idx) => (
+          <div className="grid gap-4 text-left max-w-3xl mx-auto sm:grid-cols-3">
+            {steps.map((step, idx) => (
               <div key={step.title} className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
                 <div className="flex items-center gap-2 text-[#E6007A] font-semibold text-sm uppercase">
                   <CheckCircle2 className="w-4 h-4" />
@@ -89,24 +104,18 @@ export function MiniSite() {
           </p>
 
           <div className="flex justify-center gap-4 sm:gap-5">
-            <a
-              href={twitterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5" />
-            </a>
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
+                aria-label={label}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
 
           <p className="text-white/50 text-xs sm:text-sm">

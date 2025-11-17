@@ -1,32 +1,59 @@
 import { useScrollAnimation } from '../utils/useScrollAnimation';
-import { ArrowRight, Target, Users, Infinity } from 'lucide-react';
+import { Target, Users, Infinity } from 'lucide-react';
 
-const phases = [
+type PhaseStatus = 'live' | 'next' | 'later';
+
+const phases: Array<{
+  label: string;
+  title: string;
+  description: string;
+  bullets: string[];
+  status: PhaseStatus;
+}> = [
   {
     label: 'Phase 1 · Today',
     title: 'Group pots & fast receipts',
-    description: 'Live today. Split anything, settle with DOT on Polkadot or bank rails, and export receipts to Crust so communities feel self-sovereign from day one.',
-    bullets: ['Multi-wallet settlement', 'Exports + transparency', 'Education-first onboarding kits'],
+    description: 'Live right now: DOT settlement on Asset Hub, optional bank payouts, Supabase auth, Crust/IPFS exports and responsive UI.',
+    bullets: ['Wallet login + DOT settlement', 'Manual payout flexibility', 'Receipts pinned to Crust/IPFS'],
+    status: 'live'
   },
   {
     label: 'Phase 2 · Next up',
     title: 'ChopCards + guided onboarding',
-    description: 'Design ChopCards so groups can swipe one shared card, auto-log the spend into the pot, and guide newcomers through the flow. When privacy-preserving IDs or gifting appear in the ecosystem, we can plug in without requiring them.',
-    bullets: ['Optional identity bridge (e.g., Polkadot App)', 'Auto-add card purchases to pots', 'Self-serve playbooks for organizers'],
+    description: 'Shared ChopCards auto-log spend into pots, and optional Polkadot App hooks help organizers onboard friends without forcing wallets.',
+    bullets: ['ChopCards shared spend', 'Optional Polkadot App identity', 'Self-serve playbooks'],
+    status: 'next'
   },
   {
     label: 'Phase 3',
     title: 'Stable savings & merchant rails',
-    description: 'Asset Hub stablecoins + Acala yield pots keep pooled funds productive, while QR/POS pilots and the Polkadot Visa card let events settle quickly.',
-    bullets: ['USDC/USDT pots', 'Yield routing + reporting', 'Merchant/venue payouts'],
+    description: 'Asset Hub stablecoins and Acala yield routes keep pooled funds productive while QR/POS pilots and the Polkadot Visa card support events.',
+    bullets: ['USDC/USDT pots', 'Acala yield routing', 'Polkadot Visa + merchant pilots'],
+    status: 'later'
   },
   {
     label: 'Phase 4',
     title: 'Programmable communities',
-    description: 'Micro-subscriptions, creator tipping and API hooks that stitch ChopDot into DAO tooling. Subject to change as scaling features like Elastic Coretime evolve, but always aimed at education + sovereignty.',
+    description: 'Micro-subscriptions, tipping and APIs that stay aligned with Elastic Scaling so communities can automate fair payouts.',
     bullets: ['Recurring flows', 'Creator & DAO APIs', 'Elastic Scaling-ready infra'],
+    status: 'later'
   }
 ];
+
+const statusStyles: Record<PhaseStatus, { label: string; className: string }> = {
+  live: {
+    label: 'Live today',
+    className: 'text-emerald-600 bg-emerald-50 dark:text-emerald-300 dark:bg-emerald-300/10'
+  },
+  next: {
+    label: 'Next up',
+    className: 'text-[#E6007A] bg-[#E6007A]/10'
+  },
+  later: {
+    label: 'Later roadmap',
+    className: 'text-black/60 dark:text-white/60 bg-black/5 dark:bg-white/5'
+  }
+};
 
 const values = [
   { title: 'Mission', text: 'Enable fair, transparent and near-real-time group finance on Polkadot so communities can coordinate value without custodians or borders.' },
@@ -49,39 +76,47 @@ export function Roadmap() {
             Roadmap & Vision
           </h2>
           <p className="text-black/60 dark:text-white/60 max-w-3xl mx-auto">
-            Every Parity upgrade unlocks something new for ChopDot. We’re building the social coordination layer that rides on top of the Polkadot App, Asset Hub and future Visa card.
+            Here's the high-level path: what runs today, what ships next, and what lines up with Parity’s roadmap once Elastic Scaling and the Polkadot App unlock more surface area.
           </p>
           <p className="text-xs text-black/50 dark:text-white/50 max-w-2xl mx-auto mt-3">
-            These phases are directional and will flex with community feedback, education needs and Polkadot’s scaling roadmap- but each step keeps pushing self-sovereign group finance forward.
+            Timelines flex with community feedback, but the north star—self-sovereign group finance—stays constant.
           </p>
         </div>
 
-        <div className="space-y-6">
-          {phases.map((phase, index) => (
-            <div
-              key={phase.title}
-              className="p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-black scroll-fade-in"
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-                <span className="text-xs font-semibold uppercase tracking-wide text-[#E6007A]">{phase.label}</span>
-                <div className="flex items-center gap-2 text-sm text-black/50 dark:text-white/50">
-                  <ArrowRight className="w-4 h-4" />
-                  <span>Building toward sovereign coordination</span>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {phases.map((phase, index) => {
+            const badge = statusStyles[phase.status];
+            return (
+              <div
+                key={phase.title}
+                className="p-6 sm:p-7 rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-black scroll-fade-in flex flex-col gap-4"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-black/50 dark:text-white/50">
+                    {phase.label}
+                  </span>
+                  <span className={`text-xs font-semibold px-3 py-1 rounded-full ${badge.className}`}>
+                    {badge.label}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-black dark:text-white mb-2">{phase.title}</h3>
+                  <p className="text-sm text-black/70 dark:text-white/70">{phase.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {phase.bullets.map((bullet) => (
+                    <span
+                      key={bullet}
+                      className="text-xs uppercase tracking-wide px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 text-black/70 dark:text-white/70"
+                    >
+                      {bullet}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <h3 className="text-2xl font-semibold text-black dark:text-white mb-3">{phase.title}</h3>
-              <p className="text-black/70 dark:text-white/70 mb-4">{phase.description}</p>
-              <ul className="text-sm text-black/60 dark:text-white/60 grid sm:grid-cols-3 gap-2">
-                {phase.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-2">
-                    <Target className="w-4 h-4 text-[#E6007A] mt-0.5" />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
