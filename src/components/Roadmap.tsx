@@ -10,9 +10,9 @@ const phases = [
   },
   {
     label: 'Phase 2 · Next up',
-    title: 'ChopPay + guided onboarding',
-    description: 'Design ChopPay and education rails that can plug into emerging Polkadot personhood/identity work without requiring it. When privacy-preserving IDs and gifting go live, we want ChopDot to help newcomers learn Web3 basics while settling with friends.',
-    bullets: ['Optional identity bridge (e.g., Polkadot App)', 'DM “BETA” to unlock ChopPay', 'Self-serve playbooks for organizers'],
+    title: 'ChopCards + guided onboarding',
+    description: 'Design ChopCards so groups can swipe one shared card, auto-log the spend into the pot, and guide newcomers through the flow. When privacy-preserving IDs or gifting appear in the ecosystem, we can plug in without requiring them.',
+    bullets: ['Optional identity bridge (e.g., Polkadot App)', 'Auto-add card purchases to pots', 'Self-serve playbooks for organizers'],
   },
   {
     label: 'Phase 3',

@@ -412,7 +412,7 @@ Roadmap & Vision
 - **Intro:** Reiterates that ChopDot rides on Parity upgrades / Polkadot App / Asset Hub and includes a disclaimer that phases may change as education + scaling needs evolve, but self-sovereign coordination remains the focus.
 - **Timeline Cards (4 phases):**
   1. *Phase 1 – Today:* Group pots, instant receipts, education kits for squads onboarding now.
-  2. *Phase 2 – Next up:* ChopPay + guided onboarding that can plug into forthcoming Polkadot personhood/identity rails (if users opt in).
+  2. *Phase 2 – Next up:* ChopCards + guided onboarding, where shared cards auto-log spending into pots and can plug into privacy-friendly Polkadot identity rails if users opt in.
   3. *Phase 3:* Stable savings (USDC/USDT via Asset Hub) plus merchant rails and Polkadot Visa pilots.
   4. *Phase 4:* Programmable communities- micro-subscriptions, creator tipping, APIs- described as flexible as Elastic Scaling and community feedback evolve.
 - **Each card** still uses a label, paragraph, and three bullet chips.
