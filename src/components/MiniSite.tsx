@@ -1,24 +1,13 @@
-import { useState } from 'react';
-import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { Github, Twitter, MessageCircle } from 'lucide-react';
+import { Twitter, CheckCircle2, Github } from 'lucide-react';
 import logoImage from 'figma:asset/2f278e7f9aca00057cd69bc7a598aa9bac969b83.png';
 
-export function MiniSite() {
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    interest: 'user',
-  });
+const twitterUrl = 'https://x.com/chopdotapp';
+const githubUrl = 'https://github.com/ChopDotHQ/ChopDot';
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for joining the ChopDot Beta! We\'ll be in touch soon.');
+export function MiniSite() {
+  const openTwitter = () => {
+    window.open(twitterUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -49,97 +38,46 @@ export function MiniSite() {
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-xl mx-auto">
-              The transparent expense app for friends, teams, and communities -  powered by Polkadot.
+              The transparent expense app for friends, teams, and communities -  built with Polkadot tech.
             </p>
           </div>
 
-          {/* CTA Button */}
-          {!showForm && (
-            <div className="pt-4">
-              <Button
-                size="lg"
-                onClick={() => setShowForm(true)}
-                className="bg-[#E6007A] hover:bg-[#c00068] text-white border-0 text-lg sm:text-xl px-10 sm:px-12 py-6 sm:py-7 shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{ fontWeight: 600 }}
-              >
-                Join the Beta
-              </Button>
-            </div>
-          )}
+          <div className="pt-4">
+            <Button
+              size="lg"
+              onClick={openTwitter}
+              className="bg-[#E6007A] hover:bg-[#c00068] text-white border-0 text-lg sm:text-xl px-10 sm:px-12 py-6 sm:py-7 shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ fontWeight: 600 }}
+            >
+              Follow @chopdotapp
+            </Button>
+          </div>
 
-          {/* Signup Form */}
-          {showForm && (
-            <Card className="border border-white/10 bg-white/5 backdrop-blur-xl animate-fade-in">
-              <CardContent className="pt-6 sm:pt-8 px-4 sm:px-6 lg:px-8">
-                <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6 text-left">
-                  <div>
-                    <Label htmlFor="name" className="text-white" style={{ fontWeight: 600 }}>Name</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="mt-1.5 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#E6007A]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email" className="text-white" style={{ fontWeight: 600 }}>Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="mt-1.5 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#E6007A]"
-                    />
-                  </div>
-
-                  <div>
-                    <Label className="mb-3 block text-white" style={{ fontWeight: 600 }}>I'm interested as a...</Label>
-                    <RadioGroup
-                      value={formData.interest}
-                      onValueChange={(value) => setFormData({ ...formData, interest: value })}
-                      className="space-y-3"
-                    >
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="user" id="mini-user" />
-                        <Label htmlFor="mini-user" className="cursor-pointer text-white/80 text-sm sm:text-base">
-                          User – I want to split expenses with my group
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="organizer" id="mini-organizer" />
-                        <Label htmlFor="mini-organizer" className="cursor-pointer text-white/80 text-sm sm:text-base">
-                          Organizer – I manage expenses for communities
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="developer" id="mini-developer" />
-                        <Label htmlFor="mini-developer" className="cursor-pointer text-white/80 text-sm sm:text-base">
-                          Developer – I want to build on ChopDot
-                        </Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
-
-                  <div className="pt-2">
-                    <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full bg-[#E6007A] hover:bg-[#c00068] text-white border-0 text-base sm:text-lg"
-                      style={{ fontWeight: 600 }}
-                    >
-                      Get Early Access
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
-          )}
+          <div className="grid sm:grid-cols-3 gap-4 text-left">
+            {[
+              {
+                title: 'Follow on X',
+                description: 'Beta drops and product updates post on @chopdotapp first.',
+              },
+              {
+                title: 'DM “BETA”',
+                description: 'Send us a DM with “BETA” so we can slot you into the next cohort.',
+              },
+              {
+                title: 'Watch for invites',
+                description: 'We announce cohorts via DM + public threads. No spam, just progress.',
+              },
+            ].map((step, idx) => (
+              <div key={step.title} className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                <div className="flex items-center gap-2 text-[#E6007A] font-semibold text-sm uppercase">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Step {idx + 1}</span>
+                </div>
+                <h3 className="text-lg font-semibold">{step.title}</h3>
+                <p className="text-sm text-white/70">{step.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
 
@@ -152,30 +90,27 @@ export function MiniSite() {
 
           <div className="flex justify-center gap-4 sm:gap-5">
             <a
-              href="#"
+              href={twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-[#E6007A] flex items-center justify-center transition-all"
-              aria-label="Discord"
-            >
-              <MessageCircle className="w-5 h-5" />
-            </a>
           </div>
 
           <p className="text-white/50 text-xs sm:text-sm">
-            © 2025 ChopDot. Built on Polkadot.
+            © 2025 ChopDot. Uses Polkadot technology.
           </p>
         </div>
       </footer>

@@ -4,13 +4,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import logoImage from 'figma:asset/2f278e7f9aca00057cd69bc7a598aa9bac969b83.png';
 
-type LandingVariant = 'legacy' | 'next';
-
-interface NavbarProps {
-  variant?: LandingVariant;
-}
-
-export function Navbar({ variant = 'next' }: NavbarProps) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -28,24 +22,17 @@ export function Navbar({ variant = 'next' }: NavbarProps) {
     setIsMenuOpen(false);
   };
 
-  const navItems = variant === 'next'
-    ? [
-        { label: 'Story', id: 'story' },
-        { label: 'How It Works', id: 'how-it-works' },
-        { label: 'Polkadot', id: 'polkadot-story' },
-        { label: 'Scenarios', id: 'scenarios' },
-        { label: 'Comparison', id: 'comparison' },
-        { label: 'Future', id: 'future-features' },
-        { label: 'Roadmap', id: 'roadmap' },
-        { label: 'FAQ', id: 'faq' },
-        { label: 'Beta', id: 'beta' }
-      ]
-    : [
-        { label: 'Scenarios', id: 'scenarios' },
-        { label: 'How It Works', id: 'how-it-works' },
-        { label: 'FAQ', id: 'faq' },
-        { label: 'Beta', id: 'beta' }
-      ];
+  const navItems = [
+    { label: 'Story', id: 'story' },
+    { label: 'How It Works', id: 'how-it-works' },
+    { label: 'Polkadot', id: 'polkadot-story' },
+    { label: 'Scenarios', id: 'scenarios' },
+    { label: 'Comparison', id: 'comparison' },
+    { label: 'Future', id: 'future-features' },
+    { label: 'Roadmap', id: 'roadmap' },
+    { label: 'FAQ', id: 'faq' },
+    { label: 'Beta', id: 'beta' }
+  ];
 
   return (
     <nav

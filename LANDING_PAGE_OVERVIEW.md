@@ -14,11 +14,11 @@ The landing page consists of the following sections in order:
 4. **Polkadot Alignment** (Parity roadmap + stack synergy)
 5. **How It Works** (4-step visual flow)
 6. **Scenarios** (6 use cases)
-7. **Comparison** (Splitwise vs ChopDot + Polkadot stack cards)
+7. **Comparison** (Other apps vs ChopDot + Polkadot stack cards)
 8. **Future Features** (Savings + Escrow)
 9. **Roadmap & Vision** (timeline + mission)
 10. **FAQ** (6 questions)
-11. **Beta Signup** (X-first CTA or legacy form)
+11. **Beta Signup** (X-first CTA)
 12. **Footer** (links, social, tagline)
 
 ---
@@ -64,8 +64,7 @@ The landing page consists of the following sections in order:
 - Logo file: `2f278e7f9aca00057cd69bc7a598aa9bac969b83.png`
 
 **Center (Desktop only):**
-- **Next variant:** Story → How It Works → Polkadot → Scenarios → Comparison → Future → Roadmap → FAQ → Beta (anchors: `#story`, `#how-it-works`, `#polkadot-story`, `#scenarios`, `#comparison`, `#future-features`, `#roadmap`, `#faq`, `#beta`).
-- **Legacy variant:** Scenarios → How It Works → FAQ → Beta (anchors: `#scenarios`, `#how-it-works`, `#faq`, `#beta`).
+- Story → How It Works → Polkadot → Scenarios → Comparison → Future → Roadmap → FAQ → Beta (anchors: `#story`, `#how-it-works`, `#polkadot-story`, `#scenarios`, `#comparison`, `#future-features`, `#roadmap`, `#faq`, `#beta`).
 
 **Right Side:**
 - Theme toggle (light/dark mode)
@@ -94,7 +93,7 @@ not feelings about money
 Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders.
 ```
 
-**Alternative (Variant: "legacy")**
+**Alternative option**
 ```
 Split expenses. On-chain.
 ```
@@ -146,19 +145,14 @@ Why ChopDot?
 Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid with a fast DOT transfer (roughly a few seconds) or the manual payout you choose—no IOUs, no mental accounting, no chasing people weeks later.
 ```
 
-**Paragraph 2** (Next variant):
+**Paragraph 2:**
 ```
 Here's the thing about blockchain: it's not just crypto hype. Every transaction lands on Polkadot, and when you export a receipt to IPFS/Crust it can live beyond ChopDot. So when someone asks "wait, did I pay for parking?" you have proofs—even if ChopDot shuts down. Transparency is the default, not an afterthought.
 ```
 
-**Paragraph 2** (Legacy variant):
-```
-Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. It's transparency by default, not as an afterthought. Whether you're splitting a dinner with 3 friends or managing expenses for 20 people at a festival, the system just works.
-```
-
 ### Benefits Grid
 
-**Next Variant** (4 benefits, 2x2 on desktop):
+4 benefits (2x2 on desktop):
 1. **Fast on-chain settlement**
    - Icon: Zap
    - "Close the pot and send DOT back within a few seconds. No IOUs."
@@ -174,11 +168,6 @@ Here's the thing about blockchain: it's not just crypto hype. Every transaction 
 4. **Built with Polkadot tech**
    - Icon: Database
    - "Low-fee DOT transfers on Asset Hub plus interoperability."
-
-**Legacy Variant** (3 benefits, 3 columns):
-1. **Fast on-chain settlement** - Same as above
-2. **Blockchain receipts** - "Every transaction recorded. No 'wait, who paid?'"
-3. **Actually scales** - Same as above
 
 **Benefit Card Style:**
 - Icon in pink rounded container (`bg-[#E6007A]/10`)
@@ -475,59 +464,25 @@ Questions, answered.
 Join the beta
 ```
 
-### Subheading (Next variant)
+### Subheading
 ```
 We’re moving early access coordination to X. Follow us there and DM “BETA” to get the next drop.
 ```
 
-### Subheading (Legacy variant)
-```
-Be among the first to split expenses fairly and effortlessly.
-```
+### How to join
+1. Follow [@chopdotapp](https://x.com/chopdotapp) on X.
+2. Send us a DM that simply says “BETA.”
+3. Watch for cohort invites via DM + public update threads.
 
-### CTAs
-- **Next Variant:**
-  - Three-step instruction cards (Follow @chopdotapp → DM “BETA” → Watch for invites)
-  - Primary CTA button opens `https://x.com/chopdotapp`
-  - Notes about gifting features, security audits, Visa card roadmap
-- **Legacy Variant:**
-  - Full Supabase-powered form remains (see fields below)
-
-### Form Fields (Legacy only)
-
-1. **Name** (Text input, required)
-2. **Email** (Email input, required)
-3. **Interest** (Radio group):
-   - "I'm interested as a... User" (default)
-   - "I'm interested as an... Organizer"
-   - "I'm interested as a... Developer"
-
-### CTA Button
-- **Text**: "Join Beta" → "You're on the list!" (after submit)
-- **Style**: Large pink button
-- **State**: Disabled during submission
-
-### Live Counter (Legacy variant only)
-- Fetches from Supabase function
-- Updates every 30 seconds
-- Format: "{count} people have joined"
-
-### Success Message
-- "You're on the list! We'll notify you when ChopDot is ready."
-- Social links: Twitter/X (@chopdotapp)
-
-### Error Handling
-- Shows error messages below form
-- Email validation
-- Clear error states
+The CTA button and the MiniSite both open the X profile so there’s a single flow everywhere. No email form or Supabase list is public right now.
 
 ---
 
 ## 🔗 Section 12: Footer
 
 ### Navigation Links
-- About (placeholder: `#`)
-- Docs (placeholder: `#` - should link to README)
+- About (`#story`)
+- Docs (`https://github.com/ChopDotHQ/ChopDot#readme`)
 - Privacy Policy (`/privacy.html`)
 - Terms of Service (`/terms.html`)
 - GitHub (placeholder: `#` - should link to repo)
@@ -552,43 +507,6 @@ Built in Zurich • Uses Polkadot technology • Designed for clarity.
 - White text (black in dark mode)
 - Border top
 - Centered content
-
----
-
-## 🎛️ Variant System
-
-The landing page supports two variants that can be toggled:
-
-### Toggle Button
-- **Location**: Fixed bottom-right
-- **Label**: "View Legacy Landing" / "View New Landing"
-- **URL Parameter**: `?variant=legacy` or `?variant=next`
-
-### Differences Between Variants
-
-**Hero:**
-- **Next**: Longer subheading + Polkadot badge
-- **Legacy**: Shorter subheading, no badge
-
-**Why ChopDot:**
-- **Next**: 4 benefits (includes "Built on Polkadot"), Crust Network detail, and a Polkadot App / Parity roadmap paragraph.
-- **Legacy**: 3 benefits, generic blockchain mention
-
-**Additional Sections:**
-- **Next**: Adds Polkadot Alignment, expanded Comparison cards, Future Features, and Roadmap & Vision.
-- **Legacy**: Keeps the slim hero → scenarios → why flow.
-
-**Section Order:**
-- **Next**: Hero → Why/How → Polkadot Alignment → Scenarios → Comparison → Future Features → Roadmap → FAQ → Beta → Footer
-- **Legacy**: Hero → Scenarios → Why/How → FAQ → Beta → Footer
-
-**Beta Section:**
-- **Next**: X-first CTA (Follow @chopdotapp + DM “BETA”), no form.
-- **Legacy**: Full Supabase form with live counter.
-
-**Footer:**
-- **Next**: Adds tech stack strip + builder credits.
-- **Legacy**: Standard footer.
 
 ---
 
@@ -680,15 +598,15 @@ All components are in `/src/components/`:
 
 ### Value Propositions
 1. **Fast On-Chain Settlement**: No IOUs, no waiting, everyone gets a DOT transaction in roughly a few seconds
-2. **Permanent Records**: Blockchain receipts that last forever
-3. **Data Ownership**: Your data on Crust Network, not company servers
+2. **Receipts You Can Pin**: Export receipts to IPFS/Crust so proofs can outlive ChopDot
+3. **Data Ownership**: Local-first data with optional exports instead of centralized lock-in
 4. **Transparency**: Everything recorded on-chain, immutable
 5. **Flexibility**: Works with or without crypto
 
 ### Differentiation Points
-- **vs Splitwise**: On-chain settlement, DeFi yields, decentralized storage
-- **vs Traditional Apps**: Blockchain transparency, permanent records, data ownership
-- **vs Other Web3 Apps**: Easy to use, no crypto required for participants
+- **vs Mainstream expense apps**: DOT settlement, optional DeFi yields, decentralized storage exports
+- **vs Traditional fintech**: Blockchain transparency, tamper-evident history, user-controlled data
+- **vs Other Web3 tools**: Easy onboarding, no crypto required for participants, clear UX
 
 ### Polkadot Ecosystem
 - Built on Polkadot blockchain
@@ -706,10 +624,8 @@ All components are in `/src/components/`:
 - Alternative: "Split fair. Pay transparent. Trust built-in."
 
 ### Subheading Options
-- Next: "Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders."
-- Legacy: "Split expenses. On-chain."
-- Shorter: "Split expenses. On-chain."
-- Longer: See next variant above
+- Primary: "Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders."
+- Alternative: "Split expenses. On-chain."
 
 ### Meta Description
 ```
@@ -732,10 +648,9 @@ ChopDot -  Effortless Group Expense Splitting
 - Smooth scroll behavior
 
 ### Form Interactions
-- Real-time validation
+- Real-time validation (for any internal admin forms)
 - Loading states
 - Success/error messages
-- Live counter (legacy variant)
 
 ### Theme Toggle
 - Switches between light/dark mode
@@ -767,22 +682,21 @@ When recreating this landing page, ensure:
 
 - [ ] All 10 sections implemented
 - [ ] Hero with correct headline and subheading
-- [ ] Polkadot badge in hero (next variant)
+- [ ] Polkadot badge in hero
 - [ ] Why ChopDot with 3-4 benefits
 - [ ] How It Works with 4 steps and screenshots
 - [ ] 6 scenario cards
-- [ ] Comparison table vs Splitwise
+- [ ] Comparison table vs other apps
 - [ ] Future features section (2 cards)
 - [ ] FAQ with 6 questions
-- [ ] Beta signup form with validation
+- [ ] Beta signup CTA to X (no onsite form)
 - [ ] Footer with all links
 - [ ] Dark mode toggle
 - [ ] Responsive design (mobile, tablet, desktop)
 - [ ] All animations working
 - [ ] Smooth scroll navigation
-- [ ] Variant toggle functional
 - [ ] Images optimized and loading
-- [ ] Supabase integration for signups
+- [ ] Supabase integration for auth/signups (internal use)
 - [ ] Theme persistence
 
 ---
@@ -798,13 +712,12 @@ When recreating this landing page, ensure:
 
 ## 🎓 Notes for Implementation
 
-1. **Variant System**: Use URL params or state to toggle between legacy/next
-2. **Animations**: Respect `prefers-reduced-motion` for accessibility
-3. **Images**: Optimize for web, use lazy loading
-4. **Forms**: Validate on client and server
-5. **SEO**: Meta tags, structured data, semantic HTML
-6. **Accessibility**: ARIA labels, keyboard navigation, color contrast
-7. **Performance**: Code splitting, lazy loading, optimized assets
+1. **Animations**: Respect `prefers-reduced-motion` for accessibility
+2. **Images**: Optimize for web, use lazy loading
+3. **Forms**: Validate on client and server
+4. **SEO**: Meta tags, structured data, semantic HTML
+5. **Accessibility**: ARIA labels, keyboard navigation, color contrast
+6. **Performance**: Code splitting, lazy loading, optimized assets
 
 ---
 

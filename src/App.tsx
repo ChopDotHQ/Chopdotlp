@@ -17,7 +17,6 @@ import { Roadmap } from './components/Roadmap';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<'full' | 'mini' | 'admin'>('full');
-  const [landingVersion, setLandingVersion] = useState<'legacy' | 'next'>('next');
 
   // Set meta description
   useEffect(() => {
@@ -65,38 +64,11 @@ export default function App() {
     setViewMode('full');
   }, []);
 
-  // Determine initial landing version from URL search params
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const variant = searchParams.get('variant');
-    if (variant === 'legacy') {
-      setLandingVersion('legacy');
-    } else {
-      setLandingVersion('next');
-    }
-  }, []);
-
-  const toggleLandingVersion = () => {
-    setLandingVersion((current) => {
-      const nextVariant = current === 'next' ? 'legacy' : 'next';
-      const searchParams = new URLSearchParams(window.location.search);
-      if (nextVariant === 'legacy') {
-        searchParams.set('variant', 'legacy');
-      } else {
-        searchParams.delete('variant');
-      }
-      const query = searchParams.toString();
-      const newUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
-      window.history.replaceState({}, '', newUrl);
-      return nextVariant;
-    });
-  };
-
   return (
     <>
       {/* View Mode Toggle - Fixed position */}
       {viewMode !== 'admin' && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <div className="fixed bottom-6 right-6 z-50">
           <Button
             onClick={() => setViewMode(viewMode === 'full' ? 'mini' : 'full')}
             variant="outline"
@@ -114,15 +86,6 @@ export default function App() {
               </>
             )}
           </Button>
-
-          <Button
-            onClick={toggleLandingVersion}
-            variant="outline"
-            className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg border-2 hover:scale-105 transition-transform"
-            style={{ fontWeight: 600 }}
-          >
-            {landingVersion === 'next' ? 'View Legacy Landing' : 'View New Landing'}
-          </Button>
         </div>
       )}
 
@@ -133,26 +96,17 @@ export default function App() {
         <MiniSite />
       ) : (
         <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
-          <Navbar variant={landingVersion} />
-          <Hero variant={landingVersion} />
-          {landingVersion === 'next' ? (
-            <>
-              <WhyAndHow variant="next" />
-              <PolkadotAlignment />
-              <Scenarios />
-              <Comparison />
-              <FutureFeatures />
-              <Roadmap />
-            </>
-          ) : (
-            <>
-              <Scenarios />
-              <WhyAndHow variant="legacy" />
-            </>
-          )}
+          <Navbar />
+          <Hero />
+          <WhyAndHow />
+          <PolkadotAlignment />
+          <Scenarios />
+          <Comparison />
+          <FutureFeatures />
+          <Roadmap />
           <FAQ />
-          <BetaSignup variant={landingVersion} />
-          <Footer variant={landingVersion} />
+          <BetaSignup />
+          <Footer />
         </div>
       )}
     </>
