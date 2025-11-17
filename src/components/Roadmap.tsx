@@ -4,8 +4,8 @@ import { ArrowRight, Target, Users, Infinity } from 'lucide-react';
 const phases = [
   {
     label: 'Phase 1 · Today',
-    title: 'Group pots & instant receipts',
-    description: 'Live today. Split anything, settle on Polkadot or bank rails, and keep receipts on Crust so communities feel self-sovereign from day one.',
+    title: 'Group pots & fast receipts',
+    description: 'Live today. Split anything, settle with DOT on Polkadot or bank rails, and export receipts to Crust so communities feel self-sovereign from day one.',
     bullets: ['Multi-wallet settlement', 'Exports + transparency', 'Education-first onboarding kits'],
   },
   {
@@ -17,7 +17,7 @@ const phases = [
   {
     label: 'Phase 3',
     title: 'Stable savings & merchant rails',
-    description: 'Asset Hub stablecoins + Acala yield pots keep pooled funds productive, while QR/POS pilots and the Polkadot Visa card let events settle instantly.',
+    description: 'Asset Hub stablecoins + Acala yield pots keep pooled funds productive, while QR/POS pilots and the Polkadot Visa card let events settle quickly.',
     bullets: ['USDC/USDT pots', 'Yield routing + reporting', 'Merchant/venue payouts'],
   },
   {
@@ -29,7 +29,7 @@ const phases = [
 ];
 
 const values = [
-  { title: 'Mission', text: 'Enable fair, transparent and instant group finance on Polkadot so communities can coordinate value without custodians or borders.' },
+  { title: 'Mission', text: 'Enable fair, transparent and near-real-time group finance on Polkadot so communities can coordinate value without custodians or borders.' },
   { title: 'Vision', text: 'Money coordination should feel as easy as sending a message- sovereign, interoperable and censorship-resistant.' },
   { title: 'Values', text: 'Sovereignty · Privacy · User-owned data · Open collaboration.' }
 ];

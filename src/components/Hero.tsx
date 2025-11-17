@@ -13,7 +13,7 @@ export function Hero({ variant = 'next' }: HeroProps) {
   const subheading =
     variant === 'legacy'
       ? 'Split expenses. On-chain.'
-      : 'Group expenses settled instantly on the blockchain. No IOUs, no awkward reminders.';
+      : 'Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders.';
   const showPolkadotBadge = variant === 'next';
   
   const scrollToSection = (id: string) => {

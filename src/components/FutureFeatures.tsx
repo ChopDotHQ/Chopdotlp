@@ -14,7 +14,7 @@ export function FutureFeatures() {
         <div className="text-center mb-12 scroll-fade-in">
           <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">What's Next</h2>
           <p className="text-black/60 dark:text-white/60 max-w-2xl mx-auto">
-            We're building features that make group finance smarter and fairer.
+            Here’s what we’re exploring next, based on public work around Asset Hub, Acala and Polkadot’s smart-contract roadmap.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function FutureFeatures() {
               </span>
             </div>
             <p className="text-black/70 dark:text-white/70 mb-4">
-              Save together and earn DeFi yields on pooled funds via Acala integration. While saving for trips or shared expenses, your money works for you- not just sitting idle.
+              Use Asset Hub stablecoins and Acala strategies to keep pooled funds productive before you close the pot. Rates depend on the parachain you opt into, but the goal is the same- idle money should still grow.
             </p>
             <ul className="space-y-2 text-sm text-black/60 dark:text-white/60">
               <li>✅ Earn interest on group savings</li>
@@ -46,7 +46,7 @@ export function FutureFeatures() {
               </span>
             </div>
             <p className="text-black/70 dark:text-white/70 mb-4">
-              Trustless deposits that release automatically when conditions are met. Perfect for event planning, group purchases, and milestone-based payments. No middleman needed- the smart contract enforces fairness.
+              Ink!/PolkaVM contracts that hold deposits until conditions are met. Ideal for events, vendor payouts or community escrow. No middleman- the contract enforces fairness.
             </p>
             <ul className="space-y-2 text-sm text-black/60 dark:text-white/60">
               <li>✅ Event deposits (held until date)</li>

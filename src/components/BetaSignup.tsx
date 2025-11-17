@@ -266,7 +266,7 @@ export function BetaSignup({ variant = 'next' }: BetaSignupProps) {
             Join the beta
           </h2>
           <p className="text-lg sm:text-xl text-black/60 dark:text-white/60 max-w-xl mx-auto">
-            Be among the first to split expenses- fairly, instantly, transparently.
+            Be among the first to split expenses- fairly, fast, and transparently.
           </p>
           
           {/* Signup Counter */}

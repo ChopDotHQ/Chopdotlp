@@ -5,15 +5,15 @@ export function FAQ() {
   const faqs = [
     {
       question: 'Do all members need crypto?',
-      answer: 'Nope. Everyone just adds expenses; settlement options are flexible.'
+      answer: 'No. Anyone can log expenses; only the person settling the pot needs a wallet with DOT for the on-chain transfer.'
     },
     {
       question: 'Why blockchain though?',
-      answer: 'Permanent receipts. No "wait, did I pay?" Transparent by default, not as an afterthought.'
+      answer: 'Polkadot gives us tamper-evident history. You can also export receipts to IPFS/Crust so the proof survives even if ChopDot goes offline.'
     },
     {
       question: 'Can I export everything?',
-      answer: 'Yes. CSV/PDF exports include receipts and balances.'
+      answer: 'Yes. CSV/PDF exports include receipts and balances, and you can pin the receipts to IPFS/Crust for permanence.'
     },
     {
       question: 'What if someone disagrees?',
@@ -21,7 +21,7 @@ export function FAQ() {
     },
     {
       question: 'What\'s the catch?',
-      answer: 'No ads. No data resale. Fees are waived during beta, you only pay blockchain gas fees. After beta, small platform fees may apply (0.02–0.20 CHF per settlement).'
+      answer: 'No ads. No data resale. We waive platform fees during beta so you only cover DOT network fees (fractions of a cent). After beta, small platform fees may apply (0.02–0.20 CHF per settlement).'
     },
     {
       question: 'How much does it cost?',

@@ -30,7 +30,7 @@ export default function App() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'No more "you owe me." Split group expenses instantly, settle on-chain. No IOUs, no awkward reminders.');
+    metaDescription.setAttribute('content', 'No more "you owe me." Split group expenses quickly with DOT on Polkadot, keep receipts, and skip awkward reminders.');
 
     // Add favicon
     let favicon = document.querySelector('link[rel="icon"]');

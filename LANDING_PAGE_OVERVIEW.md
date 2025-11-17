@@ -91,7 +91,7 @@ not feelings about money
 
 ### Subheading (Variant: "next")
 ```
-Group expenses settled instantly on the blockchain. No IOUs, no awkward reminders.
+Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders.
 ```
 
 **Alternative (Variant: "legacy")**
@@ -143,12 +143,12 @@ Why ChopDot?
 
 **Paragraph 1** (Both variants):
 ```
-Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid instantly- no IOUs, no mental accounting, no chasing people down three weeks later.
+Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid with a fast DOT transfer (roughly a few seconds) or the manual payout you choose—no IOUs, no mental accounting, no chasing people weeks later.
 ```
 
 **Paragraph 2** (Next variant):
 ```
-Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently on Polkadot and the receipts live on Crust Network- decentralized storage that means your data belongs to you, not our servers. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. Even if ChopDot shuts down, your records live on. It's transparency by default, not as an afterthought.
+Here's the thing about blockchain: it's not just crypto hype. Every transaction lands on Polkadot, and when you export a receipt to IPFS/Crust it can live beyond ChopDot. So when someone asks "wait, did I pay for parking?" you have proofs—even if ChopDot shuts down. Transparency is the default, not an afterthought.
 ```
 
 **Paragraph 2** (Legacy variant):
@@ -159,24 +159,24 @@ Here's the thing about blockchain: it's not just crypto hype. Every transaction 
 ### Benefits Grid
 
 **Next Variant** (4 benefits, 2x2 on desktop):
-1. **Instant settlement**
+1. **Fast on-chain settlement**
    - Icon: Zap
-   - "Close the pot, everyone's paid. No IOUs."
+   - "Close the pot and send DOT back within a few seconds. No IOUs."
 
-2. **Your receipts, forever**
+2. **Receipts you can pin**
    - Icon: Shield
-   - "Stored on Crust Network- decentralized, permanent, yours."
+   - "Export receipts to IPFS/Crust so they can outlive any single app."
 
 3. **Actually scales**
    - Icon: Users
    - "Works for 2 roommates or 20 festival attendees."
 
-4. **Built on Polkadot**
+4. **Built with Polkadot tech**
    - Icon: Database
-   - "Low fees, fast settlements, Web3 integrations."
+   - "Low-fee DOT transfers on Asset Hub plus interoperability."
 
 **Legacy Variant** (3 benefits, 3 columns):
-1. **Instant settlement** - Same as above
+1. **Fast on-chain settlement** - Same as above
 2. **Blockchain receipts** - "Every transaction recorded. No 'wait, who paid?'"
 3. **Actually scales** - Same as above
 
@@ -204,7 +204,7 @@ Here's the thing about blockchain: it's not just crypto hype. Every transaction 
   - *Wallets we plug into* -  Nova/SubWallet/Talisman for asset management, ChopDot for social finance
   - *Beyond fintech silos* -  contrasts Venmo/Cash App/Revolut with ChopDot’s borderless, non-custodial design
 - **Future Notes (3 mini-cards):** Elastic Scaling readiness, Polkadot Visa card integration, unified user experience vision
-- **Live vs Next up Cards:** Two columns summarizing what works today (wallet login, DOT settlement, Supabase auth, Crust receipts, responsive UI) and what is coming next (shared backend data, Polkadot App onboarding hooks, stablecoin savings, smart-contract escrow/ChopPay, Elastic Scaling readiness, Crust audit trails)
+- **Live vs Next up Cards:** Two columns summarizing what works today (wallet login, DOT settlement, Supabase auth, Crust receipts, responsive UI) and what is coming next (shared backend data, Polkadot App onboarding hooks, stablecoin savings, smart-contract escrow/ChopCards, Elastic Scaling readiness, Crust audit trails)
 
 ### Style
 - Uses the same scroll animation + film grain treatment
@@ -244,7 +244,7 @@ Follow a Bali trip from creation to settlement.
 
 **Step 4: Settle On-Chain**
 - Icon: CheckCircle2
-- Description: "Close the pot and settle instantly on Polkadot. Every transaction gets recorded on the blockchain- transparent, permanent, done."
+- Description: "Close the pot and settle via DOT transfer on Polkadot (blocks land in roughly six seconds). Every transaction gets recorded on-chain—transparent and tamper-evident."
 - Visual: Same Polkadot Settlement screenshot
 
 ### Visual Layout
@@ -288,7 +288,7 @@ Not just another expense app. Built for how groups actually spend.
 
 5. **Weekend getaway**
    - Icon: Calendar
-   - "Airbnb, activities, dinners- split instantly"
+   - "Airbnb, activities, dinners- split quickly and transparently"
 
 6. **Group dinner**
    - Icon: Utensils
@@ -321,12 +321,12 @@ Here's how ChopDot stacks up against traditional expense apps.
 
 | Feature | Other apps | ChopDot |
 |---------|---------------------|---------|
-| Settlement Method | Manual bank transfer | ✅ On-chain or bank |
+| Settlement Method | Manual bank transfer only | ✅ DOT on Polkadot Asset Hub (bank payouts optional) |
 | Group Savings / Yield | ❌ No | ✅ DeFi yields (coming soon) |
-| Receipt Storage | Centralized server | ✅ Decentralized (Crust/IPFS) |
-| Privacy & Data Ownership | Company servers | ✅ Your data, your control |
+| Receipt Storage | Centralized server | ✅ Optional IPFS/Crust exports |
+| Privacy & Data Ownership | Company servers | ✅ Local-first + user-triggered exports |
 | Blockchain Transparency | ❌ No | ✅ Immutable records |
-| Fees | Free (data usage unclear) | ✅ Transparent, waived in beta |
+| Fees | Free (data usage unclear) | ✅ DOT network fee (fractions of a cent) + symbolic beta fee |
 
 **Table Style:**
 - Full width, responsive
@@ -367,7 +367,7 @@ We're building features that make group finance smarter and fairer.
 
 **Description:**
 ```
-Save together and earn DeFi yields on pooled funds via Acala integration. While saving for trips or shared expenses, your money works for you- not just sitting idle.
+Use Asset Hub stablecoins and Acala strategies to keep pooled funds productive before settlement. Idle group money should still grow.
 ```
 
 **Bullets:**
@@ -385,7 +385,7 @@ Save together and earn DeFi yields on pooled funds via Acala integration. While 
 
 **Description:**
 ```
-Trustless deposits that release automatically when conditions are met. Perfect for event planning, group purchases, and milestone-based payments. No middleman needed- the smart contract enforces fairness.
+Ink!/PolkaVM contracts that hold deposits until conditions are met. Ideal for vendor payouts or community escrow. No middleman—the contract enforces fairness.
 ```
 
 **Bullets:**
@@ -411,7 +411,7 @@ Roadmap & Vision
 ### Copy Blocks
 - **Intro:** Reiterates that ChopDot rides on Parity upgrades / Polkadot App / Asset Hub and includes a disclaimer that phases may change as education + scaling needs evolve, but self-sovereign coordination remains the focus.
 - **Timeline Cards (4 phases):**
-  1. *Phase 1 – Today:* Group pots, instant receipts, education kits for squads onboarding now.
+  1. *Phase 1 – Today:* Group pots, fast receipts, education kits for squads onboarding now.
   2. *Phase 2 – Next up:* ChopCards + guided onboarding, where shared cards auto-log spending into pots and can plug into privacy-friendly Polkadot identity rails if users opt in.
   3. *Phase 3:* Stable savings (USDC/USDT via Asset Hub) plus merchant rails and Polkadot Visa pilots.
   4. *Phase 4:* Programmable communities- micro-subscriptions, creator tipping, APIs- described as flexible as Elastic Scaling and community feedback evolve.
@@ -419,7 +419,7 @@ Roadmap & Vision
 
 ### Mission & Vision Tiles
 - Three mini-cards below the timeline:
-  - **Mission:** “Enable fair, transparent and instant group finance on Polkadot…”
+  - **Mission:** “Enable fair, transparent and near-real-time group finance on Polkadot…”
   - **Vision:** “Money coordination should feel as easy as sending a message…”
   - **Values:** “Sovereignty · Privacy · User-owned data · Open collaboration.”
 
@@ -439,21 +439,24 @@ Questions, answered.
 ### Questions & Answers
 
 1. **Q: Do all members need crypto?**
-   - **A:** "Nope. Everyone just adds expenses; settlement options are flexible."
+   - **A:** "No. Anyone can log expenses; only the person settling the pot needs a wallet with DOT for the on-chain transfer."
 
 2. **Q: Why blockchain though?**
-   - **A:** "Permanent receipts. No 'wait, did I pay?' Transparent by default, not as an afterthought."
+   - **A:** "Polkadot gives us tamper-evident history. You can also export receipts to IPFS/Crust so the proof survives even if ChopDot goes offline."
 
 3. **Q: Can I export everything?**
-   - **A:** "Yes- CSV/PDF with receipts and balances."
+   - **A:** "Yes. CSV/PDF exports include receipts and balances, and you can pin the receipts to IPFS/Crust for permanence."
 
 4. **Q: What if someone disagrees?**
    - **A:** "Comment on any expense. Attach receipts. Everyone sees the same numbers."
 
 5. **Q: What's the catch?**
-   - **A:** "No ads. No data resale. Fees are waived during beta- you only pay blockchain gas fees. After beta, small platform fees may apply (0.02–0.20 CHF per settlement)."
+   - **A:** "No ads. No data resale. We waive platform fees during beta so you only cover DOT network fees (fractions of a cent). After beta, small platform fees may apply (0.02–0.20 CHF per settlement)."
 
-6. **Q: Is this ready to use?**
+6. **Q: How much does it cost?**
+   - **A:** "The per-pot fee you see in the demo is symbolic while we finalize pricing. Settling in DOT keeps costs low because Polkadot fees are measured in fractions of a cent, and even bank payouts will stay cheaper than most fintech options."
+
+7. **Q: Is this ready to use?**
    - **A:** "We're in beta. Join the waitlist to be first in line."
 
 **Layout:** 2 columns on desktop, 1 on mobile
@@ -541,7 +544,7 @@ Be among the first to split expenses fairly and effortlessly.
 
 ### Tagline
 ```
-Built in Zurich • Powered by Polkadot • Designed for clarity.
+Built in Zurich • Uses Polkadot technology • Designed for clarity.
 ```
 
 ### Footer Style
@@ -676,7 +679,7 @@ All components are in `/src/components/`:
 ## 🎯 Key Messages
 
 ### Value Propositions
-1. **Instant Settlement**: No IOUs, no waiting, everyone paid instantly
+1. **Fast On-Chain Settlement**: No IOUs, no waiting, everyone gets a DOT transaction in roughly a few seconds
 2. **Permanent Records**: Blockchain receipts that last forever
 3. **Data Ownership**: Your data on Crust Network, not company servers
 4. **Transparency**: Everything recorded on-chain, immutable
@@ -703,14 +706,14 @@ All components are in `/src/components/`:
 - Alternative: "Split fair. Pay transparent. Trust built-in."
 
 ### Subheading Options
-- Next: "Group expenses settled instantly on the blockchain. No IOUs, no awkward reminders."
+- Next: "Group expenses settle fast on Polkadot (blocks land in a few seconds). Fewer IOUs, fewer awkward reminders."
 - Legacy: "Split expenses. On-chain."
 - Shorter: "Split expenses. On-chain."
 - Longer: See next variant above
 
 ### Meta Description
 ```
-No more "you owe me." Split group expenses instantly, settle on-chain. No IOUs, no awkward reminders.
+No more "you owe me." Split group expenses quickly with DOT on Polkadot, keep receipts, and skip awkward reminders.
 ```
 
 ### Page Title

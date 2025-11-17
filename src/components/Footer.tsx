@@ -109,7 +109,7 @@ export function Footer({ variant = 'next' }: FooterProps) {
 
         {/* Tagline */}
         <p className="text-white/60 dark:text-black/60 text-sm">
-          Built in Zurich • Powered by Polkadot • Designed for clarity.
+          Built in Zurich • Uses Polkadot technology • Designed for clarity.
         </p>
         {variant === 'next' && (
           <p className="text-white/50 dark:text-black/50 text-xs mt-2">

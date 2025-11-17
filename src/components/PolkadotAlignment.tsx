@@ -9,7 +9,7 @@ export function PolkadotAlignment() {
       title: 'Parity roadmap 2024-25',
       description: 'Asynchronous Backing, Agile Coretime, Elastic Scaling and PolkaVM shrink block times, unlock flexible blockspace and welcome Solidity builders.',
       bullets: [
-        'Shorter blocks = instant pot settlements',
+        'Shorter blocks = faster pot settlements (~6s finality)',
         'Coretime markets keep fees predictable',
         'PolkaVM + Ethereum compatibility widen dev surface'
       ],
@@ -72,7 +72,7 @@ export function PolkadotAlignment() {
     'Shared backend data so pots sync across devices',
     'Guided gifting/onboarding via privacy-friendly Polkadot identity rails (if/when available)',
     'Stablecoin savings + DeFi yields via Asset Hub and Acala',
-    'Smart-contract escrow, ChopPay and merchant QR pilots',
+    'Smart-contract escrow, ChopCards and merchant QR pilots',
     'Elastic Scaling readiness + full Crust audit trails'
   ];
 

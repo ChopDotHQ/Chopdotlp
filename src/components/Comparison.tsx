@@ -7,7 +7,7 @@ export function Comparison() {
       title: 'Polkadot App',
       role: 'Gateway & identity',
       summary: 'Onboards newcomers, issues digital IDs, offers DOT on-ramps, staking, curated news and upcoming Visa card support.',
-      pairing: 'ChopDot plugs into gifting + identity so those users can coordinate value instantly.',
+      pairing: 'ChopDot plugs into gifting + identity so those users can coordinate value quickly.',
     },
     {
       title: 'Nova / SubWallet / Talisman',
@@ -52,8 +52,8 @@ export function Comparison() {
               {[
                 {
                   feature: 'Settlement method',
-                  legacy: 'Manual bank transfer',
-                  chopdot: '✅ On-chain or bank'
+                  legacy: 'Manual bank transfer only',
+                  chopdot: '✅ DOT on Polkadot Asset Hub (bank payouts optional)'
                 },
                 {
                   feature: 'Group savings / yield',
@@ -63,12 +63,12 @@ export function Comparison() {
                 {
                   feature: 'Receipt storage',
                   legacy: 'Centralized servers',
-                  chopdot: '✅ Decentralized (Crust/IPFS)'
+                  chopdot: '✅ Optional IPFS/Crust exports'
                 },
                 {
                   feature: 'Privacy & data ownership',
                   legacy: 'Platform controlled',
-                  chopdot: '✅ Your data, your control'
+                  chopdot: '✅ Local-first + user-triggered exports'
                 },
                 {
                   feature: 'Blockchain transparency',
@@ -78,7 +78,7 @@ export function Comparison() {
                 {
                   feature: 'Fees',
                   legacy: 'Free (monetized via data)',
-                  chopdot: '✅ Transparent, waived in beta'
+                  chopdot: '✅ DOT network fee (fractions of a cent) + symbolic beta fee'
                 }
               ].map((row) => (
                 <tr

@@ -21,8 +21,8 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
     ? [
         {
           icon: Zap,
-          title: 'Instant settlement',
-          description: "Close the pot, everyone's paid. No IOUs."
+          title: 'Fast on-chain settlement',
+          description: 'Close the pot and send DOT back within a few seconds. No IOUs.'
         },
         {
           icon: Shield,
@@ -38,13 +38,13 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
     : [
         {
           icon: Zap,
-          title: 'Instant settlement',
-          description: "Close the pot, everyone's paid. No IOUs."
+          title: 'Fast on-chain settlement',
+          description: 'Close the pot and send DOT back within a few seconds. No IOUs.'
         },
         {
           icon: Shield,
-          title: 'Your receipts, forever',
-          description: 'Stored on Crust Network- decentralized, permanent, yours.'
+          title: 'Receipts you can pin',
+          description: 'Export receipts to IPFS/Crust so records can outlive any single app.'
         },
         {
           icon: Users,
@@ -53,8 +53,8 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
         },
         {
           icon: Database,
-          title: 'Built on Polkadot',
-          description: 'Low fees, fast settlements, Web3 integrations.'
+          title: 'Built with Polkadot tech',
+          description: 'Low-fee DOT transfers on Asset Hub plus interoperability.'
         }
       ];
 
@@ -64,12 +64,12 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
 
   const paragraphTwo =
     variant === 'next'
-      ? `Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently on Polkadot and the receipts live on Crust Network- decentralized storage that means your data belongs to you, not our servers. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. Even if ChopDot shuts down, your records live on. It's transparency by default, not as an afterthought.`
+      ? `Here's the thing about blockchain: it's not just crypto hype. Every transaction lands on Polkadot, and when you export a receipt to Crust/IPFS it can live beyond ChopDot. So when someone asks "wait, did I pay for parking?" you have proofs. Literally. Even if ChopDot shuts down, the export stays pinned. Transparency is the default, not an afterthought.`
       : `Here's the thing about blockchain: it's not just crypto hype. Every transaction gets recorded permanently. So when someone asks "wait, did I pay for parking?" you have receipts. Literally. It's transparency by default, not as an afterthought. Whether you're splitting a dinner with 3 friends or managing expenses for 20 people at a festival, the system just works.`;
 
   const paragraphThree =
     variant === 'next'
-      ? `Parity's 2025 roadmap- Asynchronous Backing, Agile Coretime, Elastic Scaling, PolkaVM, and a more accessible Polkadot App- means faster blocks, flexible blockspace, and Solidity compatibility. The Polkadot App focuses on onboarding and identity; ChopDot sits on top to coordinate group finance the moment those new users need to settle with friends.`
+      ? `Parity's public roadmap- Asynchronous Backing, Agile Coretime, Elastic Scaling, PolkaVM, and community work around the Polkadot App- points toward shorter blocks, flexible blockspace, and easier onboarding. ChopDot isn’t an official Polkadot product, but we stay aligned so when those upgrades land we can plug in quickly.`
       : undefined;
 
   return (
@@ -100,7 +100,7 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
           {/* Prose content */}
           <div className="space-y-6 scroll-fade-in max-w-4xl mx-auto mb-12" style={{ animationDelay: '100ms' }}>
             {[ 
-              'Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid instantly- no IOUs, no mental accounting, no chasing people down three weeks later.',
+              'Group expenses are messy. Someone pays upfront, screenshots get lost, and settling up becomes this awkward game of "who owes who what?" ChopDot cuts through that. When you close a pot, everyone gets paid with a fast DOT transfer (usually a few seconds) or the manual payout you choose, so no IOUs or chasing people down three weeks later.',
               paragraphTwo,
               paragraphThree
             ]
@@ -266,7 +266,7 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
                   <div className="relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden bg-white dark:bg-black shadow-xl" style={{ maxWidth: '280px' }}>
                     <img
                       src={polkadotSettlement}
-                      alt="Polkadot blockchain settlement showing instant on-chain confirmation"
+                      alt="Polkadot blockchain settlement showing fast on-chain confirmation"
                       className="w-full h-auto"
                     />
                   </div>
@@ -318,7 +318,7 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
                       </h3>
                     </div>
                     <p className="text-black/70 dark:text-white/70 leading-relaxed">
-                      Close the pot and settle instantly on Polkadot. Every transaction gets recorded on the blockchain- transparent, permanent, done.
+                      Close the pot and settle via DOT transfer on Polkadot (blocks land in roughly six seconds). Every transaction gets recorded on-chain- transparent and tamper-evident.
                     </p>
           </div>
         </div>
@@ -326,7 +326,7 @@ export function WhyAndHow({ variant = 'next' }: WhyAndHowProps) {
         {variant === 'next' && (
           <div className="mt-16 scroll-fade-in" style={{ animationDelay: '500ms' }}>
             <h3 className="text-2xl font-bold text-center mb-6 text-black dark:text-white">
-              Powered by the Polkadot Ecosystem
+              Aligned with the Polkadot ecosystem
             </h3>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="text-center p-6 rounded-lg bg-black/5 dark:bg-white/5">

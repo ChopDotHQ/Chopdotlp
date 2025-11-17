@@ -27,7 +27,7 @@ export function Scenarios() {
     {
       icon: Calendar,
       title: 'Weekend getaway',
-      description: 'Airbnb, activities, dinners- split instantly'
+      description: 'Airbnb, activities, dinners- split quickly and transparently'
     },
     {
       icon: Utensils,
